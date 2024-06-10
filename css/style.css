@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* Scroll-bar */
+::-webkit-scrollbar{
+    width:16px;
+}
+::-webkit-scrollbar-track{
+    background-color:#8DECB4;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to top,#5D0E41,#A0153E,#FF204E);
+    border-radius: 6px;
+}
+
+/* Home-page */
+.background-container{
+    display:flex;
+    height:calc(100vh - 6rem);
+    width:99vw;
+    overflow-x: hidden;
+}
+.Arduino-head{
+    height:100%;
+    width:50%;
+    background-color: #23EAE6;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom left,blue,skyblue);
+    padding-left: 3rem;
+}
+#dates,#location{
+    font-size: large;
+    color:white; 
+    font-weight: bolder;
+}
+#dates{
+    margin-top:3rem;
+}
+#location{
+    margin-bottom:2rem;
+}
+#heading1{
+    font-size:5rem;
+    color:#112F91;
+    font-weight: bolder;
+    text-shadow: darkblue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+#heading2{
+    font-size: 3rem;
+    color:red;
+    font-weight: bolder;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+#description{
+    font-size:1.5rem;
+    color: yellow;
+    margin-top:1rem;
+}
+/* icons */
+.link-icons{
+    font-size:2rem;
+    margin-top:3rem;
+    display:flex;
+    justify-content: space-evenly;
+    padding:0.5rem;
+    width:15rem;
+    border-radius: 1rem;
+    background-color: rgba(48, 44, 44, 0.322);
+}
+.fa{
+    color:white;
+}
+.fa:hover{
+    color:#23EAE6;
+}
+.img-part{
+    height:100%;
+    width:46%;
+    background-image: url(../images/Background-home.jpeg);
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:900px){
+    .img-part{
+        display:none;
+    }
+    .Arduino-head{
+        width:100%;
+        text-align:center;
+    }
+    .link-icons{
+        margin:auto;
+    }
+}
+@media(max-width:550px){
+    #heading1{
+        font-size:4rem;
+    }
+    #heading2{
+        font-size:2rem;
+    }
+    #dates,#location,#description{
+        font-size:large;
+    }
+}
+
+/* Overview */
+
+.overview{
+    background: linear-gradient(to bottom left,darkgreen,lightseagreen, green);
+    height:auto;
+    padding:1rem;
+}
+#heading3{
+    color:#141E46;
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 2rem;
+    font-family:georgia;   
+}
+.day-container{
+    display:flex;
+    justify-content: space-evenly;
+    margin:5rem;
+}
+.content-container,.circle{
+   display:inline-block;
+}
+.circle{
+    border-radius:50%;
+    padding:1rem;
+    font-size: 2rem;
+    background: linear-gradient(to left,#f3d89f,white);
+    align-self: flex-start;
+}
+.content-container{
+    height:auto;
+    width:50vw;
+    border-radius: 2rem;
+    background-color:#8DECB4 ;
+}
+.d-heading{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 2rem;
+    font-size: 2rem;
+    padding:1rem;
+}
+.d-content{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    padding:0 1rem 1rem 1rem;
+}
+
+/* Animations */
+
+.animate1{
+    animation: enterFromRight 3s ease-in 1s 1 ;
+}
+.animate2{
+    animation: enterFromRight 3s ease-in 1.5s 1 ;
+}
+.animate3{
+    animation: enterFromRight 3s ease-in 2s 1 ;
+}
+@keyframes enterFromRight {
+    from {
+      transform: translateX(100%); 
+      opacity: 0;
+      
+    }
+    to {
+      transform: translateX(0); 
+      opacity: 1;
+    }
+  }
+
+ @media(max-width:750px){
+    .day-container{
+        flex-direction: column;
+        text-align: center;
+        gap:1rem;
+    }
+    .content-container,.circle{
+        display:block;
+    }
+    .content-container{
+        width:70vw;
+    }
+    #heading3{
+        font-size: 3rem;
+    }
+    .circle{
+        font-size:1.2rem;
+    }
+    .d-heading{
+        font-size: 1.3rem;
+    }
+    .d-content{
+        font-size:0.8rem;
+    }
+ } 
+@media(max-width:500px){
+    .day-container{
+        margin:1rem;
+    }
+}
